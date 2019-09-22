@@ -1,17 +1,12 @@
 import React from 'react';
-import App from 'next/app';
 import Layout from './components/Layout';
 
-class AppShell extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-
+const AppShell = (props) => {
     return (
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+        <Layout>
+            {props.children}
+        </Layout>
     );
-  }
-}
+};
 
 export default AppShell;
